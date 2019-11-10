@@ -14,7 +14,10 @@
             <td>{{user.first_name}}</td>
             <td>{{user.last_name}}</td>
             <td>{{user.email}}</td>
-            <td><a [routerLink]="['/users/update/', user.id]" routerLinkActive="router-link-active"> Editar </a></td>
+            <td>
+                <a [routerLink]="['/users/update/', user.id]" routerLinkActive="router-link-active"> Editar </a> |
+                <a [routerLink]="['/users/delete/', user.id]" routerLinkActive="router-link-active"> Remover </a>
+            </td>
         </tr>
     </tbody>
 </table>
