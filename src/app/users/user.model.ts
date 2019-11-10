@@ -25,3 +25,18 @@ export interface ResponseCreate {
     id: string;
     createdAt: Date;
 }
+
+export interface ResponseUser {
+    data: User;
+}
+
+export interface RequestUpdate{
+    name: string;
+    job: string;
+}
+
+export interface ResponseUpdate {
+    name: string;
+    job: string;
+    updateAt: Date;
+}

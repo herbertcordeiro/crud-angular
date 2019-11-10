@@ -7,12 +7,14 @@ import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateUserComponent } from './users/create-user/create-user.component';
 import { FormsModule } from "@angular/forms";
+import { UpdateUserComponent } from './users/update-user/update-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
