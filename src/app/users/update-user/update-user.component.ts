@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RequestUpdate } from '../user.model';
 
 @Component({
@@ -13,7 +13,7 @@ export class UpdateUserComponent implements OnInit {
   id: string;
   request: RequestUpdate;
 
-  constructor(private userSevice: UserService, private route: ActivatedRoute) { }
+  constructor(private userSevice: UserService, private route: ActivatedRoute, private _route: Router) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -30,6 +30,11 @@ export class UpdateUserComponent implements OnInit {
     this.userSevice.updateUser(this.id, this.request)
       .subscribe(res => {
         alert(`${res.name} atualizado com sucesso!`);
+        this._route.navigate(['/users']);
       });
+  }
+
+  cancel() {
+    this._route.navigate(['/users']);
   }
 }
