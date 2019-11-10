@@ -1,0 +1,18 @@
+<h1>Usuários</h1>
+
+<table *ngIf="responseUsers">
+    <thead>
+        <td>ID</td>
+        <td>Nome</td>
+        <td>Sobrenome</td>
+        <td>Email</td>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of responseUsers.data">
+            <td>{{user.id}}</td>
+            <td>{{user.first_name}}</td>
+            <td>{{user.last_name}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+</table>
